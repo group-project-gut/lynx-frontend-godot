@@ -1,10 +1,11 @@
-[gd_scene load_steps=32 format=3 uid="uid://jysssexve8li"]
+[gd_scene load_steps=44 format=3 uid="uid://jysssexve8li"]
 
 [ext_resource type="Script" path="res://entity/object/agent/Agent.gd" id="1_vcg4i"]
 [ext_resource type="Texture2D" uid="uid://d0qtsmpiwwsxl" path="res://assets/NinjaAdventure/Actor/Characters/Villager/SeparateAnim/Attack.png" id="2_bgdlx"]
 [ext_resource type="Texture2D" uid="uid://cy6fgu12r3dx1" path="res://assets/NinjaAdventure/Actor/Characters/Villager/SeparateAnim/Walk.png" id="2_v4nox"]
 [ext_resource type="Texture2D" uid="uid://ic6skivoqf27" path="res://assets/NinjaAdventure/Actor/Characters/Villager/SeparateAnim/Idle.png" id="3_0id8p"]
 [ext_resource type="Script" path="res://entity/object/agent/ActionQueue.gd" id="3_dlyry"]
+[ext_resource type="Texture2D" uid="uid://ewkhgaisv5sq" path="res://assets/NinjaAdventure/Actor/Characters/Villager/SpriteSheet.png" id="4_ivyqg"]
 [ext_resource type="PackedScene" uid="uid://ghvgwvmmooc8" path="res://ui/speech_bubble.tscn" id="6_gy6jy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o1wb4"]
@@ -37,6 +38,50 @@ region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ijh0f"]
 atlas = ExtResource("3_0id8p")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq1qs"]
+atlas = ExtResource("4_ivyqg")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5w6o"]
+atlas = ExtResource("4_ivyqg")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyymd"]
+atlas = ExtResource("4_ivyqg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx5x2"]
+atlas = ExtResource("4_ivyqg")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dl41"]
+atlas = ExtResource("4_ivyqg")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a4j2"]
+atlas = ExtResource("4_ivyqg")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyb2r"]
+atlas = ExtResource("4_ivyqg")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62xo6"]
+atlas = ExtResource("4_ivyqg")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdxrq"]
+atlas = ExtResource("4_ivyqg")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_am13v"]
+atlas = ExtResource("4_ivyqg")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbcws"]
+atlas = ExtResource("4_ivyqg")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_opo26"]
@@ -148,6 +193,68 @@ animations = [{
 "loop": true,
 "name": &"chop_up",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq1qs")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_d5w6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq1qs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyymd")
+}],
+"loop": true,
+"name": &"mine_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx5x2")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_0dl41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx5x2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3a4j2")
+}],
+"loop": true,
+"name": &"mine_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyb2r")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_62xo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyb2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdxrq")
+}],
+"loop": true,
+"name": &"mine_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_am13v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbcws")
+}],
+"loop": true,
+"name": &"mine_up",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -267,7 +374,7 @@ script = ExtResource("1_vcg4i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gslp2")
-animation = &"walk_down"
+animation = &"mine_down"
 
 [node name="ActionQueue" type="Node" parent="."]
 script = ExtResource("3_dlyry")
